@@ -8,7 +8,7 @@
     "lint": "./node_modules/.bin/minilint",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
     "watch": "./node_modules/.bin/nodemon ./tests.js",
-    "bundle": "./node_modules/.bin/browserify -s kadLocalStorage > bundle.js",
+    "bundle": "./node_modules/.bin/browserify kad-localstorage.js -s KadLocalStorage > bundle.js",
     "build": "npm run bundle; npm run minify; npm run count; rm bundle.js",
     "zuul": "./node_modules/.bin/zuul -- tests.js",
     "minify": "cat bundle.js | ./node_modules/.bin/uglifyjs > kad-localstorage.min.js",
