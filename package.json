@@ -1,7 +1,7 @@
 {
   "name": "kad-localstorage",
   "version": "0.0.1",
-  "description": "A interface to localStorage for kad",
+  "description": "An interface to localStorage for kad",
   "main": "kad-localstorage.js",
   "scripts": {
     "tape": "./node_modules/.bin/tape ./tests.js",

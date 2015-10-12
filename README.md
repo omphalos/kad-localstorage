@@ -6,7 +6,7 @@ kad-localstorage
 [![Coverage](https://coveralls.io/repos/omphalos/kad-localstorage/badge.svg)
 ](https://coveralls.io/github/omphalos/kad-localstorage)
 
-A interface to localStorage for kad.
+An interface to localStorage for kad.
 
 Installation
 ============
