@@ -14,7 +14,8 @@
     "minify": "cat bundle.js | ./node_modules/.bin/uglifyjs > kad-localstorage.min.js",
     "count": "gzip -c kad-localstorage.min.js | wc -c",
     "release": "npm run build && npm run test && ./node_modules/.bin/bumpt",
-    "test": "./node_modules/.bin/istanbul cover ./tests.js"
+    "test": "./node_modules/.bin/istanbul cover ./tests.js",
+    "cover": "./node_modules/.bin/istanbul cover ./tests.js"
   },
   "keywords": [
     "localStorage",
