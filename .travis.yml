@@ -1,0 +1,6 @@
+language: node_js
+node_js:
+  - "stable"
+after_script:
+  - npm run-script cover
+  - npm run-script coveralls

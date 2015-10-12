@@ -1,0 +1,50 @@
+{
+  "name": "kad-localstorage",
+  "version": "0.0.1",
+  "description": "A interface to localStorage for kad",
+  "main": "kad-localstorage.js",
+  "scripts": {
+    "tape": "./node_modules/.bin/tape ./tests.js",
+    "lint": "./node_modules/.bin/minilint",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
+    "watch": "./node_modules/.bin/nodemon ./tests.js",
+    "bundle": "./node_modules/.bin/browserify -s kadLocalStorage > bundle.js",
+    "build": "npm run bundle; npm run minify; npm run count; rm bundle.js",
+    "zuul": "./node_modules/.bin/zuul -- tests.js",
+    "minify": "cat bundle.js | ./node_modules/.bin/uglifyjs > kad-localstorage.min.js",
+    "count": "gzip -c kad-localstorage.min.js | wc -c",
+    "release": "npm run build && npm run test && ./node_modules/.bin/bumpt",
+    "test": "./node_modules/.bin/istanbul cover ./tests.js"
+  },
+  "keywords": [
+    "localStorage",
+    "storage",
+    "kad",
+    "kademlia",
+    "dht"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/omphalos/kad-localstorage"
+  },
+  "author": "omphalos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/omphalos/kad-localstorage/issues"
+  },
+  "homepage": "https://github.com/omphalos/kad-localstorage",
+  "devDependencies": {
+    "browserify": "^11.2.0",
+    "bumpt": "0.0.4",
+    "coveralls": "^2.11.4",
+    "istanbul": "^0.3.22",
+    "minilint": "0.0.12",
+    "nodemon": "^1.7.1",
+    "tape": "^4.2.1",
+    "uglify-js": "^2.4.24",
+    "zuul": "^3.6.0"
+  },
+  "dependencies": {
+    "dom-storage": "^2.0.1"
+  }
+}
