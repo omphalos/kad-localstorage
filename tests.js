@@ -2,7 +2,7 @@
 
 'use strict'
 
-var test = require('tape-catch')
+var test = require('tape')
 var KadLocalStorage = require('./kad-localstorage')
 var DomStorage = require('dom-storage')
 if(!global.localStorage)
