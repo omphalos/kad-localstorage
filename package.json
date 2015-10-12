@@ -5,6 +5,7 @@
   "main": "kad-localstorage.js",
   "scripts": {
     "lint": "./node_modules/.bin/minilint",
+    "tape": "./node_modules/.bin/tape tests.js",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
     "watch": "./node_modules/.bin/nodemon ./tests.js",
     "bundle": "./node_modules/.bin/browserify kad-localstorage.js -s KadLocalStorage > bundle.js",
