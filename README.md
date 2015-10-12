@@ -6,6 +6,9 @@ kad-localstorage
 [![Coverage](https://coveralls.io/repos/omphalos/kad-localstorage/badge.svg)
 ](https://coveralls.io/github/omphalos/kad-localstorage)
 
+[![Browser Support](https://saucelabs.com/browser-matrix/kadlocalstorage.svg)
+](https://saucelabs.com/u/kadlocalstorage)
+
 An interface to localStorage for kad.
 
 Installation
@@ -25,6 +28,13 @@ Usage
     })
 
 The `'label'` is used to namespace your data in localStorage.
+
+Tests
+=====
+
+To run all the tests, you'll need a
+[.zuulrc](https://github.com/defunctzombie/zuul/wiki/Zuulrc).
+Running `./tests.js` will execute the Node tests only.
 
 License
 =======
