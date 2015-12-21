@@ -37,22 +37,6 @@ test('should propagate error for missing key', function(t) {
   })
 })
 
-test('should get falsey key', function(t) {
-
-  localStorage.clear()
-
-  var store = new KadLocalStorage('test')
-
-  store.put('a', false, function(err) {
-    t.equal(err, null)
-    store.get('a', function(err, result) {
-      t.equal(err, null)
-      t.equal(result, false)
-      t.end()
-    })
-  })
-})
-
 test('should delete key', function(t) {
 
   localStorage.clear()
@@ -110,40 +94,6 @@ test('should create read stream', function(t) {
     }])
     t.end()
   }
-})
-
-test('should propagate JSON parse error from stream', function(t) {
-
-  localStorage.clear()
-
-  var store = new KadLocalStorage('test')
-  var errors = []
-
-  localStorage.setItem('test_a', 'this is invalid JSON 1')
-  localStorage.setItem('test_b', 'this is invalid JSON 2')
-
-  var stream = store.createReadStream()
-  stream.on('data', t.fail)
-  stream.on('error', errors.push.bind(errors))
-  stream.on('end', function() {
-    t.equal(errors.length, 2)
-    t.end()
-  })
-})
-
-test('should handle JSON parse failures', function(t) {
-
-  localStorage.clear()
-
-  var store = new KadLocalStorage('test')
-
-  localStorage.setItem('test_a', 'this is invalid JSON')
-
-  store.get('a', function(err, result) {
-    t.equal(!!err, true)
-    t.equal(result, undefined)
-    t.end()
-  })
 })
 
 test('should validate namespace', function(t) {

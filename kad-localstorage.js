@@ -13,18 +13,13 @@ function KadLocalStorage(namespace) {
 
 KadLocalStorage.prototype.get = function(key, cb) {
   var val = localStorage.getItem(this._prefix + key)
-  if (!val) return cb(new Error('not found'))
-  try {
-    val = JSON.parse(val)
-  } catch(err) {
-    return cb(err)
-  }
+  if(!val) return cb(new Error('not found'))
   cb(null, val)
 }
 
 KadLocalStorage.prototype.put = function(key, val, cb) {
   key = this._prefix + key
-  localStorage.setItem(key, JSON.stringify(val))
+  localStorage.setItem(key, val)
   cb(null, localStorage[key])
 }
 
@@ -51,7 +46,6 @@ KadLocalStorage.prototype.createReadStream = function() {
   return stream
 
   function onGet(key, err, val) {
-    if(err) return stream.emit('error', err)
     stream.emit('data', { key: key, value: val })
   }
 }
