@@ -1,8 +1,8 @@
 kad-localstorage
 ================
 
-[![Build Status](https://secure.travis-ci.org/omphalos/kad-localstorage.png)
-](http://travis-ci.org/omphalos/kad-localstorage)
+[![Build Status](https://secure.travis-ci.org/kadtools/kad-localstorage.png)
+](http://travis-ci.org/kadtools/kad-localstorage)
 [![Coverage](https://coveralls.io/repos/omphalos/kad-localstorage/badge.svg)
 ](https://coveralls.io/github/omphalos/kad-localstorage)
 
